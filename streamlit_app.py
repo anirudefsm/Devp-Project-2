@@ -1,20 +1,17 @@
-
+# Importing necessary libraries
 import streamlit as st
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report
 
-# Sample Data Loading Placeholder
-# Replace 'sample.csv' with your actual data source or load from a database
-@st.cache_data
-def load_data():
-    return pd.read_csv(r"C:\Users\aniru\Desktop\PythonProj\Imports_Exports_Dataset.csv")
+# Set Streamlit page title
+st.title('Imports and Exports Dataset Dashboard')
+
+# Load the dataset
+IE_dataset = pd.read_csv("Imports_Exports_Dataset.csv")
+
+# Sample of 3001 records
+data = IE_dataset.sample(n=3001, random_state=55003)
 
 data = load_data()
 
